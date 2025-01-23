@@ -3,10 +3,13 @@ import Navbar from "../components/Navbar"
 import Announcement from "../components/Announcement"
 import Footer from "../components/Footer"
 import { Add, Remove } from "@mui/icons-material"
+import {mobile} from '../responsive'
 
 const Container = styled.div``
 const Wrapper = styled.div`
     padding: 20px;
+  ${mobile({padding: '10px'})}
+    
 `
 const Title = styled.h1`
     font-weight: 300;
@@ -17,6 +20,8 @@ const Top = styled.div`
     align-items:center;
     justify-content: space-between;
     padding: 20px;
+  ${mobile({padding: '5px'})}
+
 `
 const TopButton = styled.button`
     padding: 10px;
@@ -25,21 +30,30 @@ const TopButton = styled.button`
     border: ${props => props.type === 'filled' && 'none'};
     background-color: ${props => props.type === 'filled' ? 'black' : 'transparent'};
     color: ${props => props.type === 'filled' && 'white'};
+  ${mobile({fontWeight: '400'})}
+    
 `
 const TopTexts = styled.div`
+  ${mobile({display: 'none'})}
+ 
 `
 const TopText = styled.span`
     text-decoration: underline;
     cursor: pointer;
     margin: 0 10px;
+  ${mobile({margin: '10px'})}
+    
 `
 
 const Bottom = styled.div`
     display: flex;
     justify-content: space-between;
+  ${mobile({flexDirection: 'column'})}
+
 `
 const Info = styled.div`
     flex:3;
+    
 `
 const Summary = styled.div`
     flex:1;
@@ -51,9 +65,11 @@ const Summary = styled.div`
 const Product = styled.div`
     display: flex;
     justify-content: space-between;
+    
 `
 const Image = styled.img`
     width: 200px;
+    ${mobile({width: '150px'})}
 
 `
 const Details = styled.div`
@@ -92,6 +108,8 @@ const ProductAmount = styled.div`
 const ProductPrice = styled.div`
     font-size: 30px;
     font-weight: 200;
+    ${mobile({fontSize: '24px',marginTop:'10px'})}
+
 `
 const Hr = styled.hr`
     background-color: #eee;
@@ -158,7 +176,7 @@ const Cart = () => {
                                     <Add style={{cursor:"pointer"}}/>
                                     <ProductAmount>2</ProductAmount>
                                     <Remove style={{cursor:"pointer"}}/>
-                                    <ProductPrice></ProductPrice>
+                                    <ProductPrice>$20</ProductPrice>
                                 </ProductAmountContainer>
                             </PriceDetail>
                         </Product>
@@ -177,7 +195,7 @@ const Cart = () => {
                                     <Add style={{cursor:"pointer"}}/>
                                     <ProductAmount>2</ProductAmount>
                                     <Remove style={{cursor:"pointer"}}/>
-                                    <ProductPrice></ProductPrice>
+                                    <ProductPrice>$20</ProductPrice>
                                 </ProductAmountContainer>
                             </PriceDetail>
                         </Product>
